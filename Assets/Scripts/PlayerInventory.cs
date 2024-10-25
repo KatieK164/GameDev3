@@ -1,16 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerInventory : MonoBehaviour
 {
-    public int totalScore = 0;
+    public int tomatoQuant { get; private set; }
+    public int cabbageQuant = 0;
 
-    // Function to add score when a collectable is picked up
-    public void AddToInventory(int value)
+public UnityEvent<PlayerInventory> OnTomatoCollected;
+
+    public void TomatoCollected()
     {
-        totalScore += value;
-        Debug.Log("Collected! Total Score: " + totalScore);
+        tomatoQuant++;
+        OnTomatoCollected.Invoke(this);
     }
+
+    public UnityEvent<PlayerInventory> OnCabbageCollected;
+
+    public void CabbageCollected()
+    {
+        cabbageQuant++;
+        OnCabbageCollected.Invoke(this);
+    }
+
+
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    Debug.Log("Hey");
+
+    //    if (collision.collider.tag == "Tomato")
+    //    {
+    //        GameObject tomato = collision.gameObject;
+    //        tomatoquant++;
+    //        Debug.Log("Collected! Total Tomato Score: " + tomatoquant);
+    //        Destroy(tomato);
+    //    }
+    //    else if (collision.collider.tag == "Cabbage")
+    //    {
+    //        GameObject cabbageVeg = collision.gameObject;
+    //        cabbage++;
+    //        Debug.Log("Collected! Total Cabbage Score: " + cabbage);
+    //        Destroy(cabbageVeg);
+    //    }
+    //}
 }
 
