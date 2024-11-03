@@ -13,16 +13,18 @@ public UnityEvent<PlayerInventory> OnTomatoCollected;
     public void TomatoCollected()
     {
         tomatoQuant++;
+        Debug.Log("Collected! Total Tomato Score: " + tomatoQuant);
+        
         OnTomatoCollected.Invoke(this);
     }
 
-    public UnityEvent<PlayerInventory> OnCabbageCollected;
+    /*public UnityEvent<PlayerInventory> OnCabbageCollected;
 
     public void CabbageCollected()
     {
         cabbageQuant++;
         OnCabbageCollected.Invoke(this);
-    }
+    }*/
 
 
 
