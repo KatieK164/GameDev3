@@ -8,14 +8,17 @@ using I2;
 public class TomatoPlant : MonoBehaviour, Iinteractable
 {
     [SerializeField] private string _prompt;
-    public int tomatoQuant { get; private set; }
+    [SerializeField] public int tomatoQuant = 0;
+    //{ get; public set; }
     public string InteractionPrompt => _prompt;
+
     [SerializeField] private Item item;
     private Inventory inventory;
 
     private void Start()
     {
         inventory = FindAnyObjectByType<Inventory>();
+
     }
     public bool Interact(Interactor interactor)
     {
@@ -24,7 +27,7 @@ public class TomatoPlant : MonoBehaviour, Iinteractable
             inventory.AddItem(item);
             Debug.Log("Tomato Plant!");
             tomatoHarvested();
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
         }
         else
         {
@@ -39,6 +42,7 @@ public class TomatoPlant : MonoBehaviour, Iinteractable
     {
         tomatoQuant += 5;
         Debug.Log("Collected! Total Tomato Score: " + tomatoQuant);
+        transform.GetChild(0).gameObject.SetActive(false);
 
         //tomatoText.SetText("Tomato: \n" + tomatoQuant);
         //Destroy(gameObject);

@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 8514725298032829372}
   - component: {fileID: 6043343686980369200}
   - component: {fileID: 5986245156135745821}
-  - component: {fileID: 7244201025688874025}
   - component: {fileID: -5029917213502915166}
   - component: {fileID: 2632350382973509148}
+  - component: {fileID: 1115867006922236174}
   m_Layer: 6
   m_Name: Plant_grown
-  m_TagString: Untagged
+  m_TagString: Tomato
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5820291536093970308}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 171.3351, y: 0.16553572, z: 327.30948}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -86,28 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7244201025688874025
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5820291536093970308}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1223040253640646196, guid: c3568e678d846a349a694e4904eb4247, type: 3}
 --- !u!114 &-5029917213502915166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,7 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73b992fb212a9c34c905d3e650567bdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prompt: 
+  _prompt: E toi harvest
+  tomatoQuant: 0
+  item: {fileID: 1115867006922236174}
 --- !u!65 &2632350382973509148
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -142,3 +122,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.585022, y: 1.8822759, z: 0.7861068}
   m_Center: {x: 0.038116455, y: 0.82915443, z: 0.048220456}
+--- !u!114 &1115867006922236174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5820291536093970308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7e6c510ba5677d43b55e459b2d25f6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Tomato
+  itemIcon: {fileID: 21300000, guid: b7712bb94b78b874195e5ea15745dfb8, type: 3}
+  stackSize: 5

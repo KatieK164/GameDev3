@@ -7,6 +7,7 @@ namespace I2 {
     public class Inventory : MonoBehaviour
     {
         List<Item> inventoryList;
+        //private TomatoPlant tomatoPlant;
 
 
         void Start()
@@ -20,45 +21,56 @@ namespace I2 {
 
 
         public void AddItem(Item item)
-        {
-            if (inventoryList.Count == 0)
-            {
-                inventoryList.Add(item);
-            }
-            else
-            {
-                bool inList = false;
+         {
+             if (inventoryList.Count == 0)
+             {
+                 inventoryList.Add(item);
+             }
+             else
+             {
+                 bool inList = false;
 
-                foreach (Item i in inventoryList)
-                {
-                    if (item.itemName == i.itemName)
-                    {
-                        i.stackSize++;
-                        inList = true;
-                    }
-                }
-                if (!inList)
-                {
-                    inventoryList.Add(item);
-                }
-            }
-            OnInventoryChange?.Invoke();
-        }
+                 foreach (Item i in inventoryList)
+                 {
+                     if (item.itemName == i.itemName)
+                     {
+                         i.stackSize++;
+
+                         inList = true;
+                     }
+                 }
+                 if (!inList)
+                 {
+                     inventoryList.Add(item);
+                 }
+             }
+             OnInventoryChange?.Invoke();
+         }
+
+        
 
         public List<Item> GetInventoryList()
         {
             return inventoryList;
         }
 
-        private void OnTriggerEnter(Collider other)
+        /*public void RemoveItem(Item item, int quantity)
         {
-            if (other.tag == "Tomato")
+            var existingItem = inventoryList.Find(i => i.itemName == item.itemName);
+            if (existingItem != null)
             {
-                AddItem(other.GetComponent<Item>());
+                existingItem.stackSize -= quantity;
+                if (existingItem.stackSize <= 0)
+                {
+                    inventoryList.Remove(existingItem);
+                }
+
+                OnInventoryChange?.Invoke();
             }
-            other.gameObject.SetActive(false);
-        }
+
+        }*/
     }
+        
 
   }
 
