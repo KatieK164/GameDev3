@@ -9,9 +9,17 @@ public class Sell : MonoBehaviour, Iinteractable
     public string InteractionPrompt => _prompt;
 
     private TomatoPlant tomatoPlant;
-    [SerializeField] private Inventory inventory;
+    private Inventory inventory;
+
     public int money;
-    public bool Interact(Interactor interactor)
+
+    private void Start()
+    {
+        inventory = FindAnyObjectByType<Inventory>();
+
+    }
+
+        public bool Interact(Interactor interactor)
     {
           if (tomatoPlant.tomatoQuant > 0)
           {

@@ -71,7 +71,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prompt: 
   tomatoQuant: 0
-  item: {fileID: 0}
+  item: {fileID: 4810833513047484806}
+  canHarvest: 0
+  grown: {fileID: 8061151892013571889}
 --- !u!114 &4810833513047484806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,6 +254,12 @@ PrefabInstance:
 --- !u!4 &5274070532143137545 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8514725298032829372, guid: 13159db1c3eaf6b46b515053f6e83f3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4547266452527784117}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8061151892013571889 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5820291536093970308, guid: 13159db1c3eaf6b46b515053f6e83f3d,
     type: 3}
   m_PrefabInstance: {fileID: 4547266452527784117}
   m_PrefabAsset: {fileID: 0}

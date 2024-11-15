@@ -14,6 +14,8 @@ public class TomatoPlant : MonoBehaviour, Iinteractable
 
     [SerializeField] private Item item;
     private Inventory inventory;
+    public bool canHarvest;
+    public GameObject grown;
 
     private void Start()
     {
@@ -27,6 +29,7 @@ public class TomatoPlant : MonoBehaviour, Iinteractable
             inventory.AddItem(item);
             Debug.Log("Tomato Plant!");
             tomatoHarvested();
+            StartCoroutine(plantGrow());
             //Destroy(this.gameObject);
         }
         else
@@ -40,11 +43,23 @@ public class TomatoPlant : MonoBehaviour, Iinteractable
 
     void tomatoHarvested()
     {
-        tomatoQuant += 5;
-        Debug.Log("Collected! Total Tomato Score: " + tomatoQuant);
-        transform.GetChild(0).gameObject.SetActive(false);
+        if (canHarvest == true)
+        {
+            tomatoQuant += 5;
+            Debug.Log("Collected! Total Tomato Score: " + tomatoQuant);
+            grown.SetActive(false);
+            canHarvest = false;
+            //tomatoText.SetText("Tomato: \n" + tomatoQuant);
+            //Destroy(gameObject);
+        }
 
-        //tomatoText.SetText("Tomato: \n" + tomatoQuant);
-        //Destroy(gameObject);
+    }
+
+    private IEnumerator plantGrow()
+    {
+        yield return new WaitForSeconds(3);
+        grown.SetActive(true);
+        canHarvest = true;
     }
 }
+
