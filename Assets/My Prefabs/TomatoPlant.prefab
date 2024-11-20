@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73b992fb212a9c34c905d3e650567bdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prompt: 
+  _prompt: E to Harvest
   tomatoQuant: 0
   item: {fileID: 4810833513047484806}
   canHarvest: 0
