@@ -57,7 +57,7 @@ public class TomatoPlant : MonoBehaviour, Iinteractable
 
     private IEnumerator plantGrow()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(10);
         grown.SetActive(true);
         canHarvest = true;
     }

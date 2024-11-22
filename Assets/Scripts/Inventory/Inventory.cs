@@ -76,7 +76,7 @@ namespace I2
                         money += (i.stackSize * 10);
                         i.stackSize = 0;
                     }
-                    else if (i.itemName == "milk")
+                    else if (i.itemName == "Milk")
                     {
                         money += (i.stackSize * 20);
                         i.stackSize = 0;

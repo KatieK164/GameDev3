@@ -1,3 +1,4 @@
+using I2;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,14 +6,35 @@ using UnityEngine;
 public class Cow : MonoBehaviour, Iinteractable
 {
     [SerializeField] private string _prompt;
-    public int milkQuant { get; private set; }
+    [SerializeField]public int milkQuant = 0;
 
     public string InteractionPrompt => _prompt;
 
+    [SerializeField] private Item item;
+    private Inventory inventory;
+    public bool canHarvest = true;
+    
+
+    private void Start()
+    {
+        inventory = FindAnyObjectByType<Inventory>();
+
+    }
+
     public bool Interact(Interactor interactor)
     {
-        Debug.Log("Milk!");
-        milkCollected();
+        if (inventory != null && item != null)
+        {
+            inventory.AddItem(item);
+            Debug.Log("Milk!");
+            milkCollected();
+            StartCoroutine(milkCycle());
+            //Destroy(this.gameObject);
+        }
+        else
+        {
+            Debug.Log("it aint werkin");
+        }
 
         return true;
     }
@@ -21,5 +43,14 @@ public class Cow : MonoBehaviour, Iinteractable
     {
         milkQuant++;
         Debug.Log("Collected! Total Milk Score: " + milkQuant);
+        canHarvest = false;
+    }
+
+
+    private IEnumerator milkCycle()
+    {
+        yield return new WaitForSeconds(3);
+        
+        canHarvest = true;
     }
 }
