@@ -24,7 +24,7 @@ public class Interactor : MonoBehaviour
            _interactable = _colliders[0].GetComponent<Iinteractable>();
             if (_interactable != null)
             {
-                if (_interactionPromptUI.IsDisplayed)
+                if (!_interactionPromptUI.IsDisplayed)
                 {
                     _interactionPromptUI.SetUp(_interactable.InteractionPrompt);
                 }

@@ -1077,8 +1077,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
-  _prompt: 
-  gate: {fileID: 0}
+  _prompt: '''E'' to Buy Field (%0 coins)'
+  gate: {fileID: 3630248667746185731}
 --- !u!65 &9105084942792646296
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3027,7 +3027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02778c82547d02c4ab280c926e90c7dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prompt: 
+  _prompt: '''E'' To Plant Seeds'
   tomatoPlants:
   - {fileID: 8894481278608058454}
   - {fileID: 3789299097258108615}
