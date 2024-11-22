@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BuyField : MonoBehaviour, Iinteractable
 {
-    private Inventory inventory;
+    public Inventory inventory;
     [SerializeField] private string _prompt;
     public string InteractionPrompt => _prompt;
     public GameObject gate;

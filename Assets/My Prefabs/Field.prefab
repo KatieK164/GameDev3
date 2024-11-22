@@ -84,6 +84,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ad7fa6084fbded4aacccaac394b3a81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
   _prompt: 
   gate: {fileID: 3630248667746185731}
 --- !u!65 &3144866947658692538
@@ -1075,6 +1076,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ad7fa6084fbded4aacccaac394b3a81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
   _prompt: 
   gate: {fileID: 0}
 --- !u!65 &9105084942792646296
@@ -2916,17 +2918,17 @@ PrefabInstance:
     - target: {fileID: 5985943628145847776, guid: c39247351da8d7d4a8afdc0732d99583,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.5966187
+      value: 3.54
       objectReference: {fileID: 0}
     - target: {fileID: 5985943628145847776, guid: c39247351da8d7d4a8afdc0732d99583,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.92
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 5985943628145847776, guid: c39247351da8d7d4a8afdc0732d99583,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.42
+      value: 6.86
       objectReference: {fileID: 0}
     - target: {fileID: 5985943628145847776, guid: c39247351da8d7d4a8afdc0732d99583,
         type: 3}
