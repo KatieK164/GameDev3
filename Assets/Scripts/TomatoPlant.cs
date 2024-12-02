@@ -14,6 +14,7 @@ public class TomatoPlant : MonoBehaviour, Iinteractable
 
     [SerializeField] private Item item;
     private Inventory inventory;
+    public LightingManager light;
     public bool canHarvest;
     public GameObject grown;
 
@@ -29,8 +30,9 @@ public class TomatoPlant : MonoBehaviour, Iinteractable
             inventory.AddItem(item);
             Debug.Log("Tomato Plant!");
             tomatoHarvested();
-            StartCoroutine(plantGrow());
+            //StartCoroutine(plantGrow());
             //Destroy(this.gameObject);
+            
         }
         else
         {
@@ -39,6 +41,14 @@ public class TomatoPlant : MonoBehaviour, Iinteractable
 
 
         return true;
+    }
+
+    void Update()
+    {
+        if (light.hours >= 6)
+        {
+            Grown();
+        }
     }
 
     void tomatoHarvested()
@@ -60,6 +70,15 @@ public class TomatoPlant : MonoBehaviour, Iinteractable
         yield return new WaitForSeconds(10);
         grown.SetActive(true);
         canHarvest = true;
+    }
+
+    void Grown()
+    {
+        if (canHarvest == false)
+        {
+            grown.SetActive(true);
+            canHarvest = true;
+        }
     }
 }
 
