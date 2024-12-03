@@ -8,9 +8,9 @@ public class LightingManager : MonoBehaviour
     [SerializeField] private Light DirectionalLight;
     [SerializeField] private LightingPreset Preset;
     //Variables
-    [SerializeField, Range(0, 24)] private float TimeOfDay;
+    [SerializeField, Range(0, 24)] public float TimeOfDay;
     [SerializeField] private float MinutesInDay = 1f;
-    public int hours;
+    public double hours;
     public TMP_Text clockText;
     private void Update()
     {
@@ -24,8 +24,8 @@ public class LightingManager : MonoBehaviour
             TimeOfDay %= 24; //Modulus to ensure always between 0-24
             
             UpdateLighting(TimeOfDay / 24f);
-            hours = (int)(TimeOfDay);
-            clockText.SetText(hours+ ":00");
+            hours = (double)(TimeOfDay);
+            clockText.SetText((int)hours+ ":00");
         }
         else
         {

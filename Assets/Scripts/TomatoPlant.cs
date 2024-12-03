@@ -45,7 +45,7 @@ public class TomatoPlant : MonoBehaviour, Iinteractable
 
     void Update()
     {
-        if (light.hours >= 6)
+        if (light.hours == 6.00)
         {
             Grown();
         }
@@ -65,12 +65,12 @@ public class TomatoPlant : MonoBehaviour, Iinteractable
 
     }
 
-    private IEnumerator plantGrow()
-    {
-        yield return new WaitForSeconds(10);
-        grown.SetActive(true);
-        canHarvest = true;
-    }
+    //private IEnumerator plantGrow()
+    //{
+    //    yield return new WaitForSeconds(10);
+    //    grown.SetActive(true);
+    //    canHarvest = true;
+    //}
 
     void Grown()
     {
