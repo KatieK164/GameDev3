@@ -19492,6 +19492,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1145433500}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1262461706 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8411815293510940507, guid: f780a41dfc600f84f8cd44778abbbacb,
+    type: 3}
+  m_PrefabInstance: {fileID: 701586752804668261}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1264494585 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1279437348525638701, guid: e2e682b966e3f644392ffbfab511e0e2,
@@ -33366,6 +33372,21 @@ PrefabInstance:
     - target: {fileID: 3926711633722791278, guid: f780a41dfc600f84f8cd44778abbbacb,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563704498091527823, guid: f780a41dfc600f84f8cd44778abbbacb,
+        type: 3}
+      propertyPath: tomatoPlants.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563704498091527823, guid: f780a41dfc600f84f8cd44778abbbacb,
+        type: 3}
+      propertyPath: 'tomatoPlants.Array.data[11]'
+      value: 
+      objectReference: {fileID: 1262461706}
+    - target: {fileID: 8747247081846476504, guid: f780a41dfc600f84f8cd44778abbbacb,
+        type: 3}
+      propertyPath: tomatoQuant
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9153879307451558356, guid: f780a41dfc600f84f8cd44778abbbacb,

@@ -18,9 +18,12 @@ public class PlantSeeds : MonoBehaviour, Iinteractable
 
     void planted()
     {
-        for (int i = 0; tomatoPlants[i]; i++)
+        for (int i = 0; i < tomatoPlants.Length; ++i)
         {
-            tomatoPlants[i].SetActive(true);
+            if (tomatoPlants[i] != null)
+            {
+                tomatoPlants[i].SetActive(true);
+            }
         }
         /*tomatoPlants.setActive(true);*/
         Debug.Log("Planted!");
