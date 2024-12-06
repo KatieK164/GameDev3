@@ -13,15 +13,16 @@ public class SleepyTime : MonoBehaviour, Iinteractable
     [SerializeField] private string _prompt;
     public string InteractionPrompt => _prompt;
     public LightingManager light;
+    public AudioSource audioSource;
     // Start is called before the first frame update
 
 
     public bool Interact(Interactor interactor)
     {
-        light.TimeOfDay = 6;
         day++;
+        light.TimeOfDay = 6f;
         dayText.SetText("Day: "+day);
-
+        audioSource.Play();
 
         return true;
     }

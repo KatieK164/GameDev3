@@ -14,12 +14,20 @@ public class Chicken : MonoBehaviour, Iinteractable
     [SerializeField] private Item item;
     private Inventory inventory;
     public bool canHarvest = true;
-
-
+    public LightingManager light;
+   
     private void Start()
     {
         inventory = FindAnyObjectByType<Inventory>();
 
+    }
+    void Update()
+    {
+        if ((int)light.TimeOfDay != 6)
+        {
+            return;
+        }
+        Grown();
     }
 
     public bool Interact(Interactor interactor)
@@ -30,7 +38,7 @@ public class Chicken : MonoBehaviour, Iinteractable
             inventory.AddItem(item);
             Debug.Log("egg!");
             eggCollected();
-            StartCoroutine(eggCycle());
+            //StartCoroutine(eggCycle());
             //Destroy(this.gameObject);
         }
         else
@@ -49,10 +57,12 @@ public class Chicken : MonoBehaviour, Iinteractable
         canHarvest = false;
     }
 
-    private IEnumerator eggCycle()
+    void Grown()
     {
-        yield return new WaitForSeconds(3);
+        if (canHarvest == false)
+        {
 
-        canHarvest = true;
+            canHarvest = true;
+        }
     }
 }

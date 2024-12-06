@@ -13,12 +13,23 @@ public class Cow : MonoBehaviour, Iinteractable
     [SerializeField] private Item item;
     private Inventory inventory;
     public bool canHarvest = true;
-    
+    public LightingManager light;
+    public AudioSource moo;
+   
 
     private void Start()
     {
         inventory = FindAnyObjectByType<Inventory>();
 
+    }
+
+    void Update()
+    {
+        if ((int)light.TimeOfDay != 6)
+        {
+            return;
+        }
+        Grown();
     }
 
     public bool Interact(Interactor interactor)
@@ -28,7 +39,8 @@ public class Cow : MonoBehaviour, Iinteractable
             inventory.AddItem(item);
             Debug.Log("Milk!");
             milkCollected();
-            StartCoroutine(milkCycle());
+            moo.Play();
+            //StartCoroutine(milkCycle());
             //Destroy(this.gameObject);
         }
         else
@@ -47,10 +59,12 @@ public class Cow : MonoBehaviour, Iinteractable
     }
 
 
-    private IEnumerator milkCycle()
+    void Grown()
     {
-        yield return new WaitForSeconds(3);
-        
-        canHarvest = true;
+        if (canHarvest == false)
+        {
+            
+            canHarvest = true;
+        }
     }
 }

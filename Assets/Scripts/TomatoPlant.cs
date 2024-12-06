@@ -45,10 +45,11 @@ public class TomatoPlant : MonoBehaviour, Iinteractable
 
     void Update()
     {
-        if (light.hours == 6.00)
+        if ((int)light.TimeOfDay != 6)
         {
-            Grown();
+            return;
         }
+        Grown();
     }
 
     void tomatoHarvested()

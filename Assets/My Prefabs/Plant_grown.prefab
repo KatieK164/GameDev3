@@ -101,6 +101,9 @@ MonoBehaviour:
   _prompt: E toi harvest
   tomatoQuant: 0
   item: {fileID: 1115867006922236174}
+  light: {fileID: 2343719064465317108, guid: 899aee3f465cecf4887cf124f0fa5cbc, type: 3}
+  canHarvest: 1
+  grown: {fileID: 0}
 --- !u!65 &2632350382973509148
 BoxCollider:
   m_ObjectHideFlags: 0
